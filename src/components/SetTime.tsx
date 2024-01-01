@@ -56,7 +56,7 @@ const SetTime: React.FC<SetTimeProps> = ({
       />
       秒
       <button onClick={setTimer} disabled={timerSet}>
-        設定
+        スタート
       </button>
     </>
   );

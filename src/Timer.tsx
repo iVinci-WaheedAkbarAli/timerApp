@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 // import useSound from "use-sound";
 // import Sound from "";
 import SetTime from "./components/SetTime";
+import SetTimeReset from "./components/SetTimeReset";
 import TimeReset from "./components/TimeReset";
 import Toggle from "./components/Toggle";
 import RemainingTime from "./components/RemainingTime";
@@ -49,6 +50,14 @@ const Timer = () => {
         setSeconds={setSeconds}
         setTime={setTime}
         setErrorMessage={setErrorMessage}
+        setIsRunning={setIsRunning}
+        setTimerSet={setTimerSet}
+      />
+      <SetTimeReset
+        setMinutes={setMinutes}
+        setSeconds={setSeconds}
+        setTime={setTime}
+        setCurrentTime={setCurrentTime}
         setIsRunning={setIsRunning}
         setTimerSet={setTimerSet}
       />

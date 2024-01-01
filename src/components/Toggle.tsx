@@ -27,7 +27,7 @@ const Toggle: React.FC<ToggleProps> = ({
 
   return (
     <>
-      <button onClick={toggle}>{isRunning ? "ストップ" : "スタート"}</button>
+      <button onClick={toggle}>{isRunning ? "ストップ" : "再開"}</button>
     </>
   );
 };
