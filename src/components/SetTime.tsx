@@ -64,7 +64,7 @@ const SetTime: React.FC<SetTimeProps> = ({
         colorScheme="blue"
         margin="10"
         onClick={setTimer}
-        disabled={timerSet}
+        isDisabled={timerSet}
       >
         スタート
       </Button>
