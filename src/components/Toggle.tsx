@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/react";
+
 type ToggleProps = {
   isRunning: boolean;
   setIsRunning: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,7 +29,9 @@ const Toggle: React.FC<ToggleProps> = ({
 
   return (
     <>
-      <button onClick={toggle}>{isRunning ? "ストップ" : "再開"}</button>
+      <Button colorScheme="blue" margin="10" w={40} onClick={toggle}>
+        {isRunning ? "ストップ" : "再開"}
+      </Button>
     </>
   );
 };

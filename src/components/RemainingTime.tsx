@@ -1,3 +1,4 @@
+import { Box, Text } from "@chakra-ui/react";
 type RemainingTimeProps = { time: number };
 const RemainingTime: React.FC<RemainingTimeProps> = ({ time }) => {
   const formatTime = (value: number): string =>
@@ -7,9 +8,11 @@ const RemainingTime: React.FC<RemainingTimeProps> = ({ time }) => {
   const displaySeconds = formatTime(time % 60);
 
   return (
-    <div>
-      残り時間: {displayMinutes}:{displaySeconds}
-    </div>
+    <Box>
+      <Text fontSize={50}>
+        残り時間: {displayMinutes}:{displaySeconds}
+      </Text>
+    </Box>
   );
 };
 export default RemainingTime;

@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/react";
+
 type SetTimeResetProps = {
   setTime: React.Dispatch<React.SetStateAction<number>>;
   setMinutes: React.Dispatch<React.SetStateAction<number>>;
@@ -22,6 +24,10 @@ const SetTimeReset: React.FC<SetTimeResetProps> = ({
     setIsRunning(false);
     setTimerSet(false);
   };
-  return <button onClick={handleReset}>Allリセット</button>;
+  return (
+    <Button colorScheme="blue" onClick={handleReset}>
+      Allリセット
+    </Button>
+  );
 };
 export default SetTimeReset;

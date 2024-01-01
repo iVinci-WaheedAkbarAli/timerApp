@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/react";
+
 type TimeResetProps = {
   setTime: React.Dispatch<React.SetStateAction<number>>;
   setCurrentTime: React.Dispatch<React.SetStateAction<number>>;
@@ -17,7 +19,11 @@ const TimeReset: React.FC<TimeResetProps> = ({
     setTimerSet(false);
   };
 
-  return <button onClick={reset}>リセット</button>;
+  return (
+    <Button colorScheme="blue" w={40} onClick={reset}>
+      リセット
+    </Button>
+  );
 };
 
 export default TimeReset;

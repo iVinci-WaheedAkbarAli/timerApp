@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/react";
+
 type SetTimeProps = {
   minutes: number;
   seconds: number;
@@ -39,25 +41,33 @@ const SetTime: React.FC<SetTimeProps> = ({
   };
   return (
     <>
-      <input
-        type="number"
-        value={minutes}
-        onChange={minutesChange}
-        min="0"
-        max="60"
-      />
-      分
-      <input
-        type="number"
-        value={seconds}
-        onChange={secondsChange}
-        min="0"
-        max="59"
-      />
-      秒
-      <button onClick={setTimer} disabled={timerSet}>
+      <div>
+        <input
+          type="number"
+          value={minutes}
+          onChange={minutesChange}
+          min="0"
+          max="60"
+        />
+        分
+        <input
+          type="number"
+          value={seconds}
+          onChange={secondsChange}
+          min="0"
+          max="59"
+        />
+        秒
+      </div>
+
+      <Button
+        colorScheme="blue"
+        margin="10"
+        onClick={setTimer}
+        disabled={timerSet}
+      >
         スタート
-      </button>
+      </Button>
     </>
   );
 };

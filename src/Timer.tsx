@@ -6,6 +6,7 @@ import SetTimeReset from "./components/SetTimeReset";
 import TimeReset from "./components/TimeReset";
 import Toggle from "./components/Toggle";
 import RemainingTime from "./components/RemainingTime";
+import { Text } from "@chakra-ui/react";
 
 const Timer = () => {
   const [seconds, setSeconds] = useState<number>(0);
@@ -61,6 +62,12 @@ const Timer = () => {
         setIsRunning={setIsRunning}
         setTimerSet={setTimerSet}
       />
+      {errorMessage && (
+        <Text color={"red"} fontSize={20}>
+          {errorMessage}
+        </Text>
+      )}
+      <RemainingTime time={time} />
       <div>
         <Toggle
           isRunning={isRunning}
@@ -76,9 +83,7 @@ const Timer = () => {
           setIsRunning={setIsRunning}
           setTimerSet={setTimerSet}
         />
-        {errorMessage && <p>{errorMessage}</p>}
       </div>
-      <RemainingTime time={time} />
     </>
   );
 };
