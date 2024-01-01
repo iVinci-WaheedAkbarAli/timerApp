@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 // import useSound from "use-sound";
 // import Sound from "";
-import SetTime from "./SetTime";
-import TimeReset from "./TimeReset";
-import Toggle from "./Toggle";
-import RemainingTime from "./RemainingTime";
+import SetTime from "./components/SetTime";
+import TimeReset from "./components/TimeReset";
+import Toggle from "./components/Toggle";
+import RemainingTime from "./components/RemainingTime";
 
 const Timer = () => {
   const [seconds, setSeconds] = useState<number>(0);
@@ -13,6 +12,8 @@ const Timer = () => {
   const [time, setTime] = useState<number>(0);
   const [isRunning, setIsRunning] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const [timerSet, setTimerSet] = useState<boolean>(false);
   // const [play] = useSound(Sound);
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const Timer = () => {
             // play();
             clearInterval(intervalId);
             setIsRunning(false);
+            setTimerSet(false);
             return prev;
           }
         });
@@ -42,19 +44,29 @@ const Timer = () => {
       <SetTime
         minutes={minutes}
         seconds={seconds}
+        timerSet={timerSet}
         setMinutes={setMinutes}
         setSeconds={setSeconds}
+        setTime={setTime}
+        setErrorMessage={setErrorMessage}
+        setIsRunning={setIsRunning}
+        setTimerSet={setTimerSet}
       />
       <div>
         <Toggle
-          minutes={minutes}
-          seconds={seconds}
-          setErrorMessage={setErrorMessage}
           isRunning={isRunning}
           setIsRunning={setIsRunning}
+          time={time}
           setTime={setTime}
+          currentTime={currentTime}
+          setCurrentTime={setCurrentTime}
         />
-        <TimeReset setTime={setTime} setIsRunning={setIsRunning} />
+        <TimeReset
+          setTime={setTime}
+          setCurrentTime={setCurrentTime}
+          setIsRunning={setIsRunning}
+          setTimerSet={setTimerSet}
+        />
         {errorMessage && <p>{errorMessage}</p>}
       </div>
       <RemainingTime time={time} />
