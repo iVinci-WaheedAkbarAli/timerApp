@@ -9,13 +9,13 @@ import RemainingTime from "./components/RemainingTime";
 import { Text } from "@chakra-ui/react";
 
 const Timer = () => {
-  const [seconds, setSeconds] = useState<number>(0);
-  const [minutes, setMinutes] = useState<number>(0);
-  const [time, setTime] = useState<number>(0);
-  const [isRunning, setIsRunning] = useState<boolean>(false);
-  const [errorMessage, setErrorMessage] = useState<string>("");
-  const [currentTime, setCurrentTime] = useState<number>(0);
-  const [timerSet, setTimerSet] = useState<boolean>(false);
+  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [currentTime, setCurrentTime] = useState(0);
+  const [timerSet, setTimerSet] = useState(false);
   // const [play] = useSound(Sound);
 
   useEffect(() => {
